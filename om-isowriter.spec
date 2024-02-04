@@ -46,13 +46,13 @@ export PATH=%{_qt5_bindir}:$PATH
 lang/build-translations
 
 %install
-mkdir -p                                               \
-	%{buildroot}%{_bindir}                             \
-	%{buildroot}%{_libdir}/%{name}/lang                \
-	%{buildroot}%{_docdir}/%{name}                     \
-	%{buildroot}%{_iconsdir}/hicolor/scalable/apps     \
-	%{buildroot}%{_datadir}/applications               \
-	%{buildroot}%{_datadir}/kde4/services/ServiceMenus
+mkdir -p					\
+%{buildroot}%{_bindir}                             \
+%{buildroot}%{_libdir}/%{name}/lang                \
+%{buildroot}%{_docdir}/%{name}                     \
+%{buildroot}%{_iconsdir}/hicolor/scalable/apps     \
+%{buildroot}%{_datadir}/applications               \
+%{buildroot}%{_datadir}/kde4/services/ServiceMenus
 install -m 0755 om-isowriter %{buildroot}%{_libdir}/%{name}/%{name}
 install -m 0644 lang/*.qm %{buildroot}%{_libdir}/%{name}/lang/
 install -m 0644 doc/* %{buildroot}%{_docdir}/%{name}/
@@ -63,7 +63,7 @@ cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
 [Desktop Entry]
 Version=1.0
 Name=om-isowriter
-Comment=Ttool to write a .iso file to a USB drive
+Comment=Tool to write a .iso file to a USB drive
 Exec=%{_libdir}/%{name}/%{name} %%U
 Icon=%{name}
 Terminal=false
